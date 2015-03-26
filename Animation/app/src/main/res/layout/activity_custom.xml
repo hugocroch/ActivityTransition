@@ -1,0 +1,59 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.appcom.transitionanimation.app.CustomActivity">
+    
+    <LinearLayout
+        android:id="@+id/topMenu"
+        android:background="#5d51ccff"
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:layout_height="100dp"><TextView
+        android:text="Full Custom Transition"
+        android:gravity="center"
+        android:textSize="16sp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" /></LinearLayout>
+<ScrollView android:id="@+id/scrollView"
+    android:visibility="gone"
+    android:alpha="0"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:padding="10dp"
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:layout_height="match_parent">
+        <TextView
+            android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean eu vulputate velit, sed cursus tortor. Praesent eget auctor leo. Fusce vel viverra elit. Etiam eget volutpat nisi. Sed aliquet suscipit mauris ac posuere. Vestibulum nisl dolor, pulvinar vestibulum massa a, elementum ullamcorper eros"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"/>
+        <TextView
+            android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean eu vulputate velit, sed cursus tortor. Praesent eget auctor leo. Fusce vel viverra elit. Etiam eget volutpat nisi. Sed aliquet suscipit mauris ac posuere. Vestibulum nisl dolor, pulvinar vestibulum massa a, elementum ullamcorper eros"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"/>
+        <TextView
+            android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean eu vulputate velit, sed cursus tortor. Praesent eget auctor leo. Fusce vel viverra elit. Etiam eget volutpat nisi. Sed aliquet suscipit mauris ac posuere. Vestibulum nisl dolor, pulvinar vestibulum massa a, elementum ullamcorper eros"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"/>
+        <TextView
+            android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean eu vulputate velit, sed cursus tortor. Praesent eget auctor leo. Fusce vel viverra elit. Etiam eget volutpat nisi. Sed aliquet suscipit mauris ac posuere. Vestibulum nisl dolor, pulvinar vestibulum massa a, elementum ullamcorper eros"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"/>
+        <TextView
+            android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean eu vulputate velit, sed cursus tortor. Praesent eget auctor leo. Fusce vel viverra elit. Etiam eget volutpat nisi. Sed aliquet suscipit mauris ac posuere. Vestibulum nisl dolor, pulvinar vestibulum massa a, elementum ullamcorper eros"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"/>
+
+        </LinearLayout>
+</ScrollView>
+
+</LinearLayout>
