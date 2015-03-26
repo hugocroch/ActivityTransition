@@ -9,14 +9,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ListView;
 
-import com.appcom.explorer.R;
-import com.appcom.explorer.activity.DetailCompletedTripActivity;
-import com.appcom.explorer.adapter.trip.CompletedTripAdapter;
-import com.appcom.explorer.model.Trip;
-import com.appcom.explorer.ui.listview.CircleView;
-
 import java.util.ArrayList;
 import java.util.List;
+
+import hugo.cro.activityanimation.R;
 
 /**
  * A fragment representing a list of Items.
@@ -72,7 +68,7 @@ public class CompletedTripFragment extends Fragment implements CompletedTripAdap
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_trip, container, false);
+        View view = inflater.inflate(R.layout.fragment_trip_list, container, false);
 
         // Set the adapter
         mListView = (ListView) view.findViewById(R.id.listView);

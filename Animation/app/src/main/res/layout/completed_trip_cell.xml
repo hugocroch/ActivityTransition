@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_margin="10dp"
+    android:background="?android:attr/selectableItemBackground"
+    android:layout_height="150dp">
+    <ImageView
+        android:id="@+id/completed_trip_cell_background"
+        android:layout_width="match_parent"
+        android:scaleType="centerCrop"
+        android:src="@drawable/boston"
+        android:layout_height="match_parent" />
+    <TextView
+        android:layout_margin="5dp"
+        android:textSize="20sp"
+        android:layout_alignParentBottom="true"
+        android:id="@+id/completed_trip_cell_title"
+        android:textColor="@android:color/white"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+</RelativeLayout>

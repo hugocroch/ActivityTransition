@@ -1,0 +1,87 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.appcom.explorer.fragment.completed.DetailCompletedFragment"
+    android:layout_width="match_parent"
+    android:fillViewport="true"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <ImageView
+            android:id="@+id/detail_completed_trip_image"
+            android:src="@drawable/boston"
+            android:scaleType="centerCrop"
+            android:layout_width="match_parent"
+            android:layout_height="180dp" />
+        <LinearLayout
+            android:padding="@dimen/activity_vertical_margin"
+            android:id="@+id/detail_completed_trip_content_view"
+            android:alpha="0"
+            android:visibility="gone"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:padding="10dp"
+                android:layout_gravity="center"
+                android:background="@android:color/transparent">
+
+                <com.appcom.explorer.ui.ratingbar.CustomRatingBar
+                    style="@style/CustomRatingBarStyleAnchorIndicatorLarge"
+                    android:id="@+id/detail_rating_cell_rating_bar"
+                    android:numStars="5"
+                    android:stepSize="1.0"
+                    android:background="@android:color/transparent"
+                    android:isIndicator="true"
+                    android:layout_gravity="center_horizontal"
+                    android:rating="4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+            </RelativeLayout>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp">
+                <TextView
+                    android:id="@+id/detail_completed_trip_checkin_label"
+                    android:text="0"
+                    android:gravity="center_vertical"
+                    android:textSize="25sp"
+                    android:layout_width="30dp"
+                    android:layout_height="match_parent" />
+                <TextView
+                    android:id="@+id/lblCheckin"
+                    android:layout_toRightOf="@id/detail_completed_trip_checkin_label"
+                    android:text="Checked-In"
+                    android:gravity="center_vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+            </RelativeLayout>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp">
+                <TextView
+                    android:id="@+id/detail_completed_trip_list_label"
+                    android:text="0"
+                    android:gravity="center_vertical"
+                    android:textSize="25sp"
+                    android:layout_width="30dp"
+                    android:layout_height="match_parent" />
+                <TextView
+                    android:id="@+id/lblList"
+                    android:text="places"
+                    android:gravity="center_vertical"
+                    android:layout_toRightOf="@id/detail_completed_trip_list_label"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+            </RelativeLayout>
+            <Button
+                android:text="@string/view_attraction"
+                android:layout_width="match_parent"
+                android:layout_height="50dp" />
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>
