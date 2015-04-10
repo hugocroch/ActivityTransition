@@ -6,10 +6,8 @@
     android:layout_height="match_parent"
     tools:context="com.appcom.explorer.fragment.completed.CompletedTripFragment">
 
-    <com.appcom.explorer.ui.listview.CircleView
+    <ListView
         android:id="@+id/listView"
-        app:imageButton="@drawable/action_button"
-        app:showButton="true"
         android:layout_width="match_parent"
         android:layout_height="match_parent"/>
 

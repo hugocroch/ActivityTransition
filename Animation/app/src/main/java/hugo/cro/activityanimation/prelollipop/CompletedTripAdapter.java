@@ -8,10 +8,9 @@ import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.appcom.explorer.R;
-import com.appcom.explorer.model.Trip;
-
 import java.util.List;
+
+import hugo.cro.activityanimation.R;
 
 /**
  * Created by hugocrochetiere on 2014-09-26.
@@ -37,6 +36,7 @@ public class CompletedTripAdapter extends ArrayAdapter<Trip> {
         TripHolder holder;
 
         if (convertView == null) {
+            convertView = LayoutInflater.from(getContext()).inflate(R.layout.completed_trip_cell, null);
             convertView = LayoutInflater.from(getContext()).inflate(R.layout.completed_trip_cell, null);
             holder = new TripHolder();
             holder.lblTitle = (TextView) convertView.findViewById(R.id.completed_trip_cell_title);

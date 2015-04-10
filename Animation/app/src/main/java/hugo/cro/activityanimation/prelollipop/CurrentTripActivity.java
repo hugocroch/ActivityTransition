@@ -12,9 +12,8 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.appcom.explorer.R;
-import com.appcom.explorer.fragment.NavigationDrawerFragment;
-
+import hugo.cro.activityanimation.NavigationDrawerFragment;
+import hugo.cro.activityanimation.R;
 
 public class CurrentTripActivity extends Activity
         implements NavigationDrawerFragment.NavigationDrawerCallbacks, CompletedTripFragment.OnFragmentCompletedTripInteractionListener {

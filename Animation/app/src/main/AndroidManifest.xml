@@ -16,10 +16,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <!--<activity-->
-            <!--android:name=".lollipop.ListActivity"-->
-            <!--android:label="@string/title_activity_second" >-->
-        <!--</activity>-->
         <activity
             android:name=".lollipop.DetailActivity"
             android:label="@string/title_activity_second" >
@@ -36,10 +32,10 @@
             android:name=".SlideScaleActivity"
             android:label="@string/title_activity_slide_scale" >
         </activity>
-        <activity
-            android:name=".FlipActivity"
-            android:label="@string/title_activity_flip" >
-        </activity>
+        <!--<activity-->
+            <!--android:name=".FlipActivity"-->
+            <!--android:label="@string/title_activity_flip" >-->
+        <!--</activity>-->
         <activity
             android:name=".CustomActivity"
             android:label="@string/title_activity_custom" >
