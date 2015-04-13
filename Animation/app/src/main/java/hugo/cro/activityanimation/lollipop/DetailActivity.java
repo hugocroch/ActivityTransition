@@ -21,7 +21,6 @@ public class DetailActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detail);
-
         lblTitle = (TextView) findViewById(R.id.title);
 
         getWindow().getEnterTransition().addListener(new Transition.TransitionListener() {
@@ -32,7 +31,7 @@ public class DetailActivity extends Activity {
 
             @Override
             public void onTransitionEnd(Transition transition) {
-                lblTitle.animate().setDuration(300).alpha(1);
+                lblTitle.animate().setDuration(500).alpha(1);
                 getWindow().getEnterTransition().removeListener(this);
             }
 
@@ -56,7 +55,7 @@ public class DetailActivity extends Activity {
     @Override
     public void onBackPressed() {
 
-        lblTitle.animate().setDuration(300).alpha(0).withEndAction(new Runnable() {
+        lblTitle.animate().setDuration(500).alpha(0).withEndAction(new Runnable() {
             @Override
             public void run() {
                 finishAfterTransition();

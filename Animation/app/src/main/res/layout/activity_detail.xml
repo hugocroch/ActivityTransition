@@ -4,7 +4,7 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     android:paddingBottom="@dimen/activity_vertical_margin"
-    tools:context="cro.hugo.androidlanimation.DetailActivity">
+    tools:context="hugo.cro.activityanimation.lollipop.DetailActivity">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -13,6 +13,7 @@
             android:onClick="onImagePressed"
             android:src="@drawable/river"
             android:transitionName="background"
+            android:scaleType="centerCrop"
             android:id="@+id/background"
             android:layout_width="match_parent"
             android:layout_height="250dp" />

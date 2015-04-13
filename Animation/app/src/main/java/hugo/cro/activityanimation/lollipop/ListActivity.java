@@ -7,6 +7,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.transition.Explode;
 import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
@@ -22,7 +23,7 @@ public class ListActivity extends android.app.ListActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         getWindow().setAllowEnterTransitionOverlap(true);
-        getWindow().setExitTransition(new Explode());
+//        getWindow().setExitTransition(new Explode());
         setContentView(R.layout.activity_list);
 
         String[] ARRAY = new String[5];
