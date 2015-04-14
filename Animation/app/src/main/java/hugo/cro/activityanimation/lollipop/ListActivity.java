@@ -13,7 +13,11 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.ListView;
 
+import hugo.cro.activityanimation.CustomActivity;
+import hugo.cro.activityanimation.FadeActivity;
 import hugo.cro.activityanimation.R;
+import hugo.cro.activityanimation.SlideActivity;
+import hugo.cro.activityanimation.SlideScaleActivity;
 
 
 public class ListActivity extends android.app.ListActivity {
@@ -36,11 +40,49 @@ public class ListActivity extends android.app.ListActivity {
     @TargetApi(Build.VERSION_CODES.LOLLIPOP)
     @Override
     protected void onListItemClick(ListView l, View v, int position, long id) {
+switch (position) {
+    case 0: {
+        Intent intent = new Intent(this, SlideActivity.class);
+        startActivity(intent);
+        overridePendingTransition(R.anim.slide_right, R.anim.slide_reverse_right);
+        break;
+    }
+    case 1: {
+        Intent intent = new Intent(this, FadeActivity.class);
+        startActivity(intent);
+        overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
+        break;
+    }
+    case 2: {
+        Intent intent = new Intent(this, SlideScaleActivity.class);
+        startActivity(intent);
+        overridePendingTransition(R.anim.slide_scale_right, R.anim.slide_scale_reverse_right);
+        break;
+    }
+    case 3: {
+        int[] screenLocation = new int[2];
+        v.getLocationOnScreen(screenLocation);
 
+        Intent intent = new Intent(this, CustomActivity.class);
+        intent.putExtra("orientation", getResources().getConfiguration().orientation).
+                putExtra("left", screenLocation[0]).
+                putExtra("top", screenLocation[1]).
+                putExtra("width", v.getWidth()).
+                putExtra("height", v.getHeight());
+
+        startActivity(intent);
+        overridePendingTransition(0, 0);
+        break;
+    }
+    case 4: {
         Intent intent = new Intent(this, DetailActivity.class);
-        ImageView background = (ImageView)v.findViewById(R.id.background);
+        ImageView background = (ImageView) v.findViewById(R.id.background);
         background.setTransitionName("background");
         startActivity(intent, ActivityOptions.makeSceneTransitionAnimation(this, background, "background").toBundle());
+        break;
+    }
+}
+
     }
 
     @Override

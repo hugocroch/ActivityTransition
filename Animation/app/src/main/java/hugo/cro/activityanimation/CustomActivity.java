@@ -13,14 +13,18 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewTreeObserver;
 import android.view.animation.DecelerateInterpolator;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.ScrollView;
+import android.widget.TextView;
 
 
 public class CustomActivity extends ActionBarActivity {
 
-
-    LinearLayout topMenu;
+    ImageView imgHeader;
+    TextView txtTitle;
+    View parentView;
     int originalOrientation;
     private static final TimeInterpolator sDecelerator = new DecelerateInterpolator();
     int mLeftDelta;
@@ -33,9 +37,10 @@ public class CustomActivity extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_custom);
+        imgHeader = (ImageView)findViewById(R.id.background);
+        txtTitle = (TextView)findViewById(R.id.title);
+        parentView = findViewById(R.id.parentView);
 
-        topMenu = (LinearLayout) findViewById(R.id.topMenu);
-        scrollView = (ScrollView) findViewById(R.id.scrollView);
         Bundle bundle = getIntent().getExtras();
 
         final int top = bundle.getInt("top");
@@ -46,40 +51,30 @@ public class CustomActivity extends ActionBarActivity {
 
         if (savedInstanceState == null) {
 
-            ViewTreeObserver observer = topMenu.getViewTreeObserver();
+            ViewTreeObserver observer = imgHeader.getViewTreeObserver();
             observer.addOnPreDrawListener(new ViewTreeObserver.OnPreDrawListener() {
                 @TargetApi(Build.VERSION_CODES.JELLY_BEAN)
                 @Override
                 public boolean onPreDraw() {
 
                     int[] screenLocation = new int[2];
-                    topMenu.getViewTreeObserver().removeOnPreDrawListener(this);
-                    topMenu.getLocationOnScreen(screenLocation);
+                    imgHeader.getViewTreeObserver().removeOnPreDrawListener(this);
+                    imgHeader.getLocationOnScreen(screenLocation);
 
                     mLeftDelta = left - screenLocation[0];
                     mTopDelta = top - screenLocation[1];
+                    imgHeader.setTranslationY(mTopDelta);
+                    imgHeader.setTranslationX(mLeftDelta);
 
-                    topMenu.setTranslationY(mTopDelta);
-                    topMenu.setTranslationX(mLeftDelta);
-
-                    topMenu.animate().setDuration(ANIM_DURATION)
-                                     .translationX(left)
-                                     .translationY(0)
-                                     .setInterpolator(sDecelerator)
-                                     .withEndAction(new Runnable() {
-                                         public void run() {
-                                             scrollView.setVisibility(View.VISIBLE);
-                                             scrollView.animate().alpha(1);
-                                         }
-                                     });
-
-                    int fromColor = 0x5d51ccff;
-                    int toColor = 0xff0077FF;
-
-                    ValueAnimator colorAnim = ObjectAnimator.ofInt(topMenu, "backgroundColor", fromColor, toColor);
-                    colorAnim.setDuration(500);
-                    colorAnim.setEvaluator(new ArgbEvaluator());
-                    colorAnim.start();
+                    imgHeader.animate().setDuration(ANIM_DURATION)
+                                        .translationY(0)
+                            .setInterpolator(sDecelerator)
+                            .withEndAction(new Runnable() {
+                                @Override
+                                public void run() {
+                                    txtTitle.animate().alpha(1);
+                                }
+                            });
 
                     return true;
                 }
@@ -134,24 +129,23 @@ public class CustomActivity extends ActionBarActivity {
         // Animate image back to thumbnail size/location
 
 
-        scrollView.animate().alpha(0).setDuration(200).withEndAction(new Runnable() {
-            @Override
-            public void run() {
-                topMenu.animate().setDuration(500).
-                        translationX(mLeftDelta).translationY(mTopDelta).
-                        withEndAction(endAction);
-
-
-                int RED = 0x5d51ccff;
-                int BLUE = 0xff0077FF;
-
-                ValueAnimator colorAnim = ObjectAnimator.ofInt(topMenu, "backgroundColor", BLUE, RED);
-                colorAnim.setDuration(500);
-                colorAnim.setEvaluator(new ArgbEvaluator());
-                colorAnim.start();
-            }
-        });
-
+//        scrollView.animate().alpha(0).setDuration(200).withEndAction(new Runnable() {
+//            @Override
+//            public void run() {
+//                topMenu.animate().setDuration(500).
+//                        translationX(mLeftDelta).translationY(mTopDelta).
+//                        withEndAction(endAction);
+//
+//
+//                int RED = 0x5d51ccff;
+//                int BLUE = 0xff0077FF;
+//
+//                ValueAnimator colorAnim = ObjectAnimator.ofInt(topMenu, "backgroundColor", BLUE, RED);
+//                colorAnim.setDuration(500);
+//                colorAnim.setEvaluator(new ArgbEvaluator());
+//                colorAnim.start();
+//            }
+//        });
     }
 
 
